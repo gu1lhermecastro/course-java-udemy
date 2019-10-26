@@ -18,18 +18,19 @@ public class Program {
     System.out.println("Enter quantity for product: ");
     product.quantity = scanner.nextInt();
 
-    System.out.println("Value in stock: " + product.totalValueInStock());
+    System.out.println(product.toString());
 
     System.out.println("How many do you want to add: ");
     int increaseQuantity = scanner.nextInt();
 
     product.addProducts(increaseQuantity);
-    System.out.println("Value in stock: " + product.totalValueInStock());
+    System.out.println(product.toString());
 
     System.out.println("How many do you want to remove: ");
     int decreaseQuantity = scanner.nextInt();
 
     product.removeProducts(decreaseQuantity);
-    System.out.println("Value in stock: " + product.totalValueInStock());
+    System.out.println(product.toString());
+
   }
 }
