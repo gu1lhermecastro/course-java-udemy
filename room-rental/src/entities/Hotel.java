@@ -11,7 +11,4 @@ public class Hotel {
     return guests;
   }
 
-  public String toString() {
-    return "Aluno: ";
-  }
 }

@@ -10,7 +10,7 @@ public class Program {
     Scanner input = new Scanner(System.in);
     Hotel hotel = new Hotel();
 
-    System.out.print("Quantas vagas deseja alugar? ");
+    System.out.print("Quantas vagas deseja alugar: ");
     int vacancy = input.nextInt();
 
     Student[] studentss = new Student[vacancy];
