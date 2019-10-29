@@ -3,9 +3,11 @@ package entities;
 
 public class ListBillet {
   private Billet first;
-  private Billet aux;
-  private Billet last;
   private int lenght = 0;
+
+  public ListBillet() {
+    this.first = null;
+  }
 
   public void setLenght(int lenght) {
     this.lenght = lenght;
@@ -14,23 +16,22 @@ public class ListBillet {
   public void addBillet(Billet newBillet) {
     if (first == null) {
       first = newBillet;
-      newBillet.setNext(null);
-      lenght++;
-      return;
-    }
-
-    Billet aux = first;
-
-    if (newBillet.getMonth() < aux.getMonth()) {
-      newBillet.setNext(first.getNext());
-      first = newBillet;
-
+      first.setNext(null);
     } else {
+      Billet aux = first;
+
       while (aux.getNext() != null) {
         aux = aux.getNext();
       }
       aux.setNext(newBillet);
+      System.out.println(aux.getId());
     }
+
+
+
+
+
+
   }
 
   public void removeBillet() {
@@ -38,15 +39,22 @@ public class ListBillet {
     first.setNext(aux);
   }
 
-  public void viewBillets() {
-    if (first == null) {
-      System.out.println("Lista vazia!");
-    } else {
-      aux = first;
-      while (aux != null) {
-        System.out.println("Boleto: " + aux.getId());
-        aux = aux.getNext();
-      }
-    }
-  }
+//  public void viewBillets() {
+//    if (first == null) {
+//      System.out.println("Lista vazia!");
+//    } else {
+//      aux = first;
+//      while (aux != null) {
+//        System.out.println("Boleto: "
+//                            + aux.getId()
+//                            + ", Vencimento: "
+//                            + aux.getDay()
+//                            + "/"
+//                            + aux.getMonth()
+//                            + ", Valor: "
+//                            + aux.getValue());
+//        aux = aux.getNext();
+//      }
+//    }
+//  }
 }
